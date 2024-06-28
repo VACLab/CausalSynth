@@ -1,67 +1,84 @@
 {
-  "name": "synthetic-data-generator",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@codemirror/highlight": "^0.19.8",
-    "@codemirror/lang-json": "^6.0.1",
-    "@codemirror/lang-python": "^6.1.6",
-    "@mui/icons-material": "^5.15.19",
-    "@mui/material": "^5.15.19",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@uiw/react-codemirror": "^4.22.1",
-    "ag-charts-community": "^9.3.1",
-    "ag-charts-react": "^9.3.1",
-    "ag-grid-community": "^31.3.2",
-    "ag-grid-react": "^31.3.2",
-    "axios": "^1.6.7",
-    "echarts-for-react": "^3.0.2",
-    "papaparse": "^5.4.1",
-    "prismjs": "^1.29.0",
-    "react": "^18.2.0",
-    "react-codemirror2": "^8.0.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
-    "react-simple-code-editor": "^0.13.1",
-    "react-syntax-highlighter": "^15.5.0",
-    "react-vega": "^7.6.0",
-    "reactflow": "^11.11.3",
-    "vega": "^5.29.0",
-    "vega-lite": "^5.18.1",
-    "vega-tooltip": "^0.34.0",
-    "web-vitals": "^2.1.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "@eslint/compat": "^1.0.3",
-    "@eslint/js": "^9.4.0",
-    "eslint": "^9.4.0",
-    "eslint-plugin-react": "^7.34.2",
-    "globals": "^15.4.0"
-  }
+    "name": "synthetic-data-generator",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@codemirror/commands": "^6.6.0",
+        "@codemirror/highlight": "^0.19.8",
+        "@codemirror/lang-json": "^6.0.1",
+        "@codemirror/lang-python": "^6.1.6",
+        "@codemirror/language": "^6.10.2",
+        "@codemirror/lint": "^6.8.1",
+        "@codemirror/search": "^6.5.6",
+        "@codemirror/state": "^6.4.1",
+        "@codemirror/theme-one-dark": "^6.1.2",
+        "@codemirror/view": "^6.28.2",
+        "@emotion/react": "^11.11.4",
+        "@emotion/styled": "^11.11.5",
+        "@mui/icons-material": "^5.15.19",
+        "@mui/material": "^5.15.19",
+        "@testing-library/jest-dom": "^5.17.0",
+        "@testing-library/react": "^13.4.0",
+        "@testing-library/user-event": "^13.5.0",
+        "@uiw/codemirror-extensions-basic-setup": "^4.22.2",
+        "@uiw/react-codemirror": "^4.22.2",
+        "ag-charts-community": "^9.3.1",
+        "ag-charts-react": "^9.3.1",
+        "ag-grid-community": "^31.3.2",
+        "ag-grid-react": "^31.3.2",
+        "ajv": "^8.16.0",
+        "ajv-keywords": "^5.1.0",
+        "axios": "^1.6.7",
+        "echarts": "^5.5.0",
+        "echarts-for-react": "^3.0.2",
+        "papaparse": "^5.4.1",
+        "prismjs": "^1.29.0",
+        "react": "^18.2.0",
+        "react-codemirror2": "^8.0.0",
+        "react-dom": "^18.2.0",
+        "react-scripts": "5.0.1",
+        "react-simple-code-editor": "^0.13.1",
+        "react-syntax-highlighter": "^15.5.0",
+        "react-vega": "^7.6.0",
+        "reactflow": "^11.11.3",
+        "vega": "^5.29.0",
+        "vega-lite": "^5.18.1",
+        "vega-tooltip": "^0.34.0",
+        "web-vitals": "^2.1.4"
+    },
+    "scripts": {
+        "start": "react-app-rewired start",
+        "build": "react-app-rewired build",
+        "test": "react-app-rewired test",
+        "eject": "react-scripts eject",
+        "analyze": "npm run build && webpack-bundle-analyzer build/static/js/*.js"
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app",
+            "react-app/jest"
+        ]
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "devDependencies": {
+        "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+        "@eslint/compat": "^1.0.3",
+        "@eslint/js": "^9.4.0",
+        "eslint": "^9.4.0",
+        "eslint-plugin-react": "^7.34.3",
+        "globals": "^15.4.0",
+        "react-app-rewired": "^2.2.1",
+        "webpack-bundle-analyzer": "^4.10.2"
+    }
 }
