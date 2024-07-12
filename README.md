@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# CausalSynth
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+CausalSynth is an interactive web application designed for generating synthetic datasets based on user-defined causal relationships. The application provides a user-friendly graphical interface for defining causal graphs, specifying variable interrelationships, and visualizing the generated data.
 
-## Available Scripts
+## Motivation
 
-In the project directory, you can run:
+The primary motivation behind CausalSynth is to address challenges in causal inference from observational data, such as the presence of confounding variables and the lack of controlled conditions. Observational data often lacks a ground truth causal model, making it difficult to evaluate visual causal inference tools effectively. CausalSynth provides a robust tool for generating synthetic datasets with known causal relationships, which can serve as ground truth datasets for evaluating visual causal inference technologies.
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Graphical Interface**: Define acyclic causal graphs using a user-friendly graphical interface.
+- **Variable Management**: Create and manage variables, including setting attributes and interrelationships.
+- **Formula Definition**: Use Python-based formulas or predefined distribution parameters to define variable data generation.
+- **Visualization Tools**: Built-in tools for visualizing generated datasets, including scatter plots, bubble plots, histograms, pie charts, and causal graphs.
+- **JSON and CSV Export**: Export graph configurations as JSON files and generated data as CSV files for further analysis and reuse.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Usage
 
-### `npm test`
+### 1. Define Variables and Causal Relationships
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Use the graphical interface to create variables and define causal relationships between them. Variables can be defined with specific attributes, including ranges, categorical values, and corresponding probability values.
 
-### `npm run build`
+### 2. Generate and Export Data
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+After defining the causal graph, specify the number of samples to be generated. The application will produce a JSON file documenting the graph configuration and a CSV file containing the generated data.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 3. Visualize Data
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Use the built-in visualization tools to inspect the generated data and validate the causal relationships. Visualizations include scatter plots, bubble plots, histograms, pie charts, and causal graphs.
 
-### `npm run eject`
+## Example Usage
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+A typical workflow in CausalSynth involves defining variables and their relationships, generating synthetic data, and visualizing the results. For instance, you can define variables such as Distance, Price, and Flights, with dependencies among them, and generate data to analyze how these variables interact.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Distance: Numerical, independent variable (range: 100 to 3000)
+- Price: Numerical, dependent variable (formula: 100 + 20 _ math.log(Distance) + 10 _ np.random.random())
+- Flights: Categorical variable depending on Distance and Price
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+After defining the graph, you can generate a CSV file containing the data and use the visualization tools to inspect the relationships.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Installation
 
-## Learn More
+To run CausalSynth locally, follow these steps:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Clone the repository:
+   `git clone https://github.com/VACLab/CausalSynth.git`
+   `cd CausalSynth`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. Install dependencies:
+   `npm install`
 
-### Code Splitting
+3. Start the development server:
+   `npm start`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+4. Open your browser and navigate to `http://localhost:3000`.
 
-### Analyzing the Bundle Size
+## Contribution
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Contributions to CausalSynth are welcome! If you have any suggestions, bug reports, or feature requests, please create an issue or submit a pull request.
 
-### Making a Progressive Web App
+## Authors
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- **Zhehao Wang** - [zhehaow24@gmail.com](mailto:zhehaow24@gmail.com)
+- **Arran Zeyu Wang** - [zeyuwang@cs.unc.edu](mailto:zeyuwang@cs.unc.edu)
+- **David Borland** - [borland@renci.org](mailto:borland@renci.org)
+- **David Gotz** - [gotz@unc.edu](mailto:gotz@unc.edu)
 
-### Advanced Configuration
+## Acknowledgments
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+This research is made possible in part by NSF Award #2211845.
 
-### Deployment
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
