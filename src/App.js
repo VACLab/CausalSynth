@@ -168,20 +168,38 @@ const App = () => {
           : `${fileName + '.csv'}`
       );
     } catch (error) {
+      let errorMessage = 'An unknown error occurred. Please try again.';
+
       if (error.response && error.response.data instanceof Blob) {
         const reader = new FileReader();
         reader.onload = () => {
-          const errorData = JSON.parse(reader.result);
-          const boldedError = `<strong>${(errorData.error =
-            errorData.error.endsWith('.')
-              ? errorData.error
-              : errorData.error +
-                '.')}</strong> Please review your JSON configuration and also ensure stable network connection.`;
-          setErrorMessage(boldedError);
+          try {
+            const errorData = JSON.parse(reader.result);
+            const boldedError = `<strong>${
+              errorData.error.endsWith('.')
+                ? errorData.error
+                : errorData.error + '.'
+            }</strong> Please review your JSON configuration and also ensure a stable network connection.`;
+            setErrorMessage(boldedError);
+          } catch (e) {
+            setErrorMessage(
+              'Failed to parse error response. Please ensure stable network connection.'
+            );
+          }
           setErrorDialogOpen(true);
         };
         reader.readAsText(error.response.data);
+      } else if (
+        error.response &&
+        error.response.data &&
+        typeof error.response.data === 'string'
+      ) {
+        const errorData = { error: error.response.data };
+        const boldedError = `<strong>${errorData.error}</strong> Please check your JSON configuration and ensure the backend is reachable.`;
+        setErrorMessage(boldedError);
+        setErrorDialogOpen(true);
       } else {
+        const errorData = { error: 'Unknown error' };
         const boldedError = `<strong>${errorData.error}</strong> Please check your JSON configuration and ensure the backend is reachable.`;
         setErrorMessage(boldedError);
         setErrorDialogOpen(true);
