@@ -33,7 +33,7 @@ Use the built-in visualization tools to inspect the generated data and validate 
 A typical workflow in CausalSynth involves defining variables and their relationships, generating synthetic data, and visualizing the results. For instance, you can define variables such as Distance, Price, and Flights, with dependencies among them, and generate data to analyze how these variables interact.
 
 - Distance: Numerical, independent variable (range: 100 to 3000)
-- Price: Numerical, dependent variable (formula: 100 + 20 _ math.log(Distance) + 10 _ np.random.random())
+- Price: Numerical, dependent variable (formula: 100 + 20 \* math.log(Distance) + 10 \* np.random.random())
 - Flights: Categorical variable depending on Distance and Price
 
 After defining the graph, you can generate a CSV file containing the data and use the visualization tools to inspect the relationships.
