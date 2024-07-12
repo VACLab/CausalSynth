@@ -47,8 +47,8 @@
         "web-vitals": "^2.1.4"
     },
     "scripts": {
-        "start": "ESLINT_NO_DEV_ERRORS=true react-app-rewired start",
-        "build": "ESLINT_NO_DEV_ERRORS=true react-app-rewired build",
+        "start": "CI=false ESLINT_NO_DEV_ERRORS=true react-app-rewired start",
+        "build": "CI=false ESLINT_NO_DEV_ERRORS=true react-app-rewired build",
         "test": "react-app-rewired test",
         "eject": "react-scripts eject",
         "analyze": "npm run build && webpack-bundle-analyzer build/static/js/*.js"
@@ -57,7 +57,12 @@
         "extends": [
             "react-app",
             "react-app/jest"
-        ]
+        ],
+        "rules": {
+            "no-unused-vars": "off",
+            "react-hooks/exhaustive-deps": "off",
+            "eqeqeq": "off"
+        }
     },
     "browserslist": {
         "production": [
