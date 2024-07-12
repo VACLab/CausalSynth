@@ -42,7 +42,7 @@ After defining the graph, you can generate a CSV file containing the data and us
 
 To run CausalSynth locally, follow these steps:
 
-1. Clone the repository:
+1. Clone and navigate to the repository:
    `git clone https://github.com/VACLab/CausalSynth.git`
    `cd CausalSynth`
 
