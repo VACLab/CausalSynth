@@ -2006,19 +2006,25 @@ const App = () => {
           maxWidth="lg"
           fullWidth
         >
-          <DialogTitle sx={{ marginTop: 2 }}>
-            {isDataVisOpen ? 'Charting' : 'CSV Viewer'}
-            <IconButton
-              onClick={isDataVisOpen ? handleCloseDataVis : handleOpenDataVis}
-              style={{
-                position: 'absolute',
-                right: isDataVisOpen ? 1050 : 1022,
-                top: 29,
-              }}
-            >
-              {isDataVisOpen ? <DatasetIcon /> : <AutoGraphIcon />}
-            </IconButton>
-
+          <DialogTitle
+            sx={{
+              marginTop: 2,
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+            }}
+          >
+            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+              {isDataVisOpen ? 'Charting' : 'CSV Viewer'}
+              <IconButton
+                onClick={isDataVisOpen ? handleCloseDataVis : handleOpenDataVis}
+                sx={{
+                  marginLeft: 1, // Adjust the margin as needed
+                }}
+              >
+                {isDataVisOpen ? <DatasetIcon /> : <AutoGraphIcon />}
+              </IconButton>
+            </Box>
             <IconButton
               onClick={() => {
                 const link = document.createElement('a');
@@ -2028,7 +2034,7 @@ const App = () => {
                 link.click();
                 link.remove();
               }}
-              style={{ position: 'absolute', right: 16, top: 29 }}
+              sx={{ marginLeft: 2 }} // Adjust the margin as needed
             >
               <Tooltip title="Download CSV">
                 <FileDownloadIcon />
@@ -2193,7 +2199,7 @@ const App = () => {
               eChartNodes={eChartNodes}
               eChartEdges={eChartEdges}
             />
-            ;
+
             {chartType === 'causal_graph' && (
               // <Box p={2} mt={-2} ml={4} width="50%">
               //   <h3>eCharts Code</h3>
