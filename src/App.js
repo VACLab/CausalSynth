@@ -1332,7 +1332,6 @@ const App = () => {
               nodeTypes={nodeTypes}
               onEdgeClick={onEdgeClick}
               onNodeClick={onNodeClick}
-              defaultViewport={{ zoom: 0.5 }} // Set the default zoom level here
             />
           </Box>
           <Box width={400} padding={2} marginRight={4}>
