@@ -163,6 +163,7 @@ function VirtualKeyboard({ variables, formula, setFormula }) {
                 operator === '<=' ||
                 operator === '>=' ||
                 operator === 'int()' ||
+                operator === '()' ||
                 operator === 'if'
                   ? '20px'
                   : '50%',
