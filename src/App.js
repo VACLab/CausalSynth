@@ -1789,7 +1789,7 @@ const App = () => {
                                   incoming variables{' '}
                                 </strong>
                                 of the current node, namely the variables that
-                                show up under the{' '}
+                                show up in the{' '}
                                 <strong style={{ color: '#66bb6a' }}>
                                   Incoming Variables
                                 </strong>{' '}
